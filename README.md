@@ -151,15 +151,4 @@ outputs/largeset_yolov8m/
 - 本项目会统一再生成曲线图 PNG
 - Faster R-CNN 会输出 `train_log.csv` 并生成曲线
 
-## 说明
 
-Ultralytics 文档显示其训练流程支持自定义数据训练，并保存训练相关结果；其文档也提供了 RT-DETR 的训练 / 验证 / 推理入口。PyTorch 官方教程与 TorchVision 文档也提供了基于预训练检测模型的微调实践，这正适合本项目中的 Faster R-CNN 小样本方案。 citeturn967843search1turn967843search0turn967843search2turn967843search8
-
-## 你最先应该跑哪个
-
-默认建议你第一轮先跑这两个：
-
-1. `fewshot_yolov8n`：最快出结果
-2. `largeset_yolov8m`：最稳的主力方案
-
-如果你要我继续，我下一步可以基于你的**缺陷类别名**、**图片分辨率**、**显卡型号**，把这套配置再替你改成更贴近产线的默认参数。
