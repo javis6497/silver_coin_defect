@@ -1,0 +1,36 @@
+seed: 42
+project:
+  output_dir: outputs
+  name: largeset_rtdetr_l
+dataset:
+  root_dir: F:/.Javis/silver_coin_detection/dataset
+  image_size: 960
+  use_test_for_eval: true
+preprocess:
+  enable_enhance: true
+  pad_ratio: 0.08
+train:
+  imgsz: 960
+  epochs: 180
+  batch_size: 4
+  workers: 4
+  device: 0
+  patience: 30
+  optimizer: auto
+  lr0: 0.0005
+  hsv_h: 0.015
+  hsv_s: 0.7
+  hsv_v: 0.4
+  degrees: 3.0
+  translate: 0.03
+  scale: 0.15
+  fliplr: 0.5
+  mosaic: 0.0
+  mixup: 0.0
+infer:
+  conf: 0.25
+  iou: 0.5
+model:
+  framework: ultralytics
+  name: rtdetr_l
+  weights: rtdetr-l.pt

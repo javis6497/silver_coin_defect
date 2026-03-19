@@ -1,0 +1,44 @@
+seed: 42
+
+project:
+  output_dir: outputs
+  name: fewshot_fasterrcnn
+
+dataset:
+  root_dir: F:/.Javis/silver_coin_detection/dataset
+  image_size: 640
+  use_test_for_eval: false
+
+preprocess:
+  enable_enhance: true
+  pad_ratio: 0.08
+
+train:
+  imgsz: 640
+  epochs: 25
+  batch_size: 1
+  workers: 4
+  device: 0
+  patience: 10
+  optimizer: SGD
+  lr0: 0.0001
+
+  hsv_h: 0.005
+  hsv_s: 0.10
+  hsv_v: 0.08
+
+  degrees: 2.0
+  translate: 0.01
+  scale: 0.03
+  fliplr: 0.2
+  mosaic: 0.0
+  mixup: 0.0
+
+infer:
+  conf: 0.5
+  iou: 0.5
+
+model:
+  framework: torchvision
+  name: fasterrcnn_resnet50_fpn
+  weights: DEFAULT

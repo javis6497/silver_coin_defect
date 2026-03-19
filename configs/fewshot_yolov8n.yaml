@@ -1,0 +1,44 @@
+seed: 42
+
+project:
+  output_dir: outputs
+  name: fewshot_yolov8n_2
+
+dataset:
+  root_dir: F:/.Javis/silver_coin_detection/dataset
+  image_size: 640
+  use_test_for_eval: false
+
+preprocess:
+  enable_enhance: true
+  pad_ratio: 0.08
+
+train:
+  imgsz: 640
+  epochs: 120
+  batch_size: 16
+  workers: 4
+  device: 0
+  patience: 15
+  optimizer: AdamW
+  lr0: 0.0007
+
+  hsv_h: 0.008
+  hsv_s: 0.15
+  hsv_v: 0.12
+
+  degrees: 5
+  translate: 0.01
+  scale: 0.05
+  fliplr: 0.2
+  mosaic: 0.1
+  mixup: 0.0
+
+infer:
+  conf: 0.45
+  iou: 0.5
+
+model:
+  framework: ultralytics
+  name: yolov8n
+  weights: yolov8n.pt

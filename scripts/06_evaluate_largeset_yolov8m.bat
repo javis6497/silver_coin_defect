@@ -1,0 +1,6 @@
+@echo off
+chcp 65001 >nul
+setlocal
+call .venv\Scripts\activate
+python evaluate.py --config configs/largeset_yolov8m.yaml
+pause
